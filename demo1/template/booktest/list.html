@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+</head>
+<body>
+    <h2>列表</h2>
+    <ul>
+        {% for book in books %}
+        <li>
+            {{book.title}}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/booktest/detail/1/">跳转到详情菜单1</a>
+    <a href="/booktest/detail/2/">跳转到详情菜单2</a>
+    <a href="/booktest/detail/3/">跳转到详情菜单3</a>
+
+</body>
+</html>
