@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票信息汇总</title>
+</head>
+<body>
+<h2>投票信息汇总</h2>
+    {% for question in questions %}
+    <a href="">{{question.content}}</a><br>
+    {% endfor %}
+</body>
+</html>

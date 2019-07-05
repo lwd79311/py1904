@@ -9,10 +9,11 @@
     <ul>
         {% for book in books %}
         <li>
-            <a href="/booktest/detail/{{ book.id }}/">{{book.title}}</a>
+            {# <a href="/booktest/detail/{{ book.id }}/">{{book.title}}</a> #}
+            <a href="{% url 'booktest:detail' book.id %}">{{book.title}}</a>
         </li>
         {% endfor %}
-    </ul>de
+    </ul>
 
 </body>
 </html>
