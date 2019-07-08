@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票结果</title>
+</head>
+<body>
+<div class="container">
+    <h2>投票结果</h2>
+    <h3>当前问题为：{{ question.content }}</h3>
+    {% for choose in question.choose_set.all %}
+    <ul>
+        <li>{{ forloop.counter }}--{{ choose.name }} 得票：{{ choose.votes }}</li>
+    </ul>
+    {% endfor %}
+    <a href="{% url 'vote:index' %}">回到首页</a>
+</div>
+</body>
+</html>

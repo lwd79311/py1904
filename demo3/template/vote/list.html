@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票页面</title>
+</head>
+<body>
+<h2>{{ question.content }}</h2>
+<div>
+    <ul>
+        <form action="{% url 'vote:list' question.id %}" method="post">
+            {% for choose in question.choose_set.all %}
+            {% if forloop.counter == 1 %}
+            <li>
+                <input checked name="choose" type="radio" value="{{ choose.id }}">{{ choose.name }}
+            </li>
+            {% else %}
+            <li>
+                <input name="choose" type="radio" value="{{ choose.id }}">{{ choose.name }}
+            </li>
+            {% endif %}
+            {% endfor %}
+            <input type="submit" value="投票">
+        </form>
+    </ul>
+</div>
+{# <a href="{% url 'vote:result' question.id %}">投票</a> #}
+</body>
+</html>

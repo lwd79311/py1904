@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+<h1>用户登录</h1>
+<form action="{% url 'vote:login'%}"method="post">
+    请输入用户名：<input name = "username" type="text"><br>
+    请输入密码：<input name = "password" type="password"><br>
+    <button type="submit" class="btn btn-default">登录</button>
+</form>
+</body>
+</html>

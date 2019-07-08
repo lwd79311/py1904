@@ -5,9 +5,26 @@
     <title>投票信息汇总</title>
 </head>
 <body>
+<div class="container">
+    {% if username %}
+    当前用户为：{{ username }}----<a href="{% url 'vote:logout' %}">退出登录</a>
+    {% else %}
+        没有登录
+    {% endif %}
+
+
+</div>
+
+
 <h2>投票信息汇总</h2>
-    {% for question in questions %}
-    <a href="">{{question.content}}</a><br>
-    {% endfor %}
+    {% if questions %}
+    <ul>
+        {% for question in questions %}
+        <li><a href="{% url 'vote:list' question.id %}">{{ forloop.counter }}{{question.content}}</a><br></li>
+        {% endfor %}
+    {% else %}
+    <li>没有问题可以投票</li>
+    {% endif %}
+        </ul>
 </body>
 </html>
